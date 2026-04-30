@@ -1,5 +1,5 @@
 {
-  "name": "SMM Nexus",
+  "name": "User dashboard",
   "description": "A high-performance SMM Panel dashboard featuring seamless Supabase integration, real-time order tracking, and a modern SaaS interface.",
   "requestFramePermissions": [],
   "majorCapabilities": []

@@ -37,7 +37,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {/* Sidebar - Desktop */}
       <aside className="hidden md:flex flex-col w-64 bg-white border-r border-slate-200">
         <div className="p-6">
-          <h1 className="text-2xl font-bold text-blue-600 tracking-tight">SMM Nexus</h1>
+          <h1 className="text-2xl font-bold text-blue-600 tracking-tight">User Dashboard</h1>
           <p className="text-xs text-slate-400 font-mono mt-1 uppercase tracking-widest">v2.4.0</p>
         </div>
 
@@ -73,7 +73,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
       {/* Mobile Top Bar */}
       <div className="md:hidden fixed top-0 left-0 right-0 h-16 bg-white border-b border-slate-200 px-4 flex items-center justify-between z-40">
-        <h1 className="text-xl font-bold text-blue-600">SMM Nexus</h1>
+        <h1 className="text-xl font-bold text-blue-600">User Dashboard</h1>
         <button onClick={() => setIsMobileMenuOpen(true)}>
           <Menu className="w-6 h-6 text-slate-600" />
         </button>
