@@ -79,7 +79,7 @@ const Orders: React.FC = () => {
     <div className="space-y-8">
       <header>
         <h1 className="text-3xl font-bold text-slate-900">Order History</h1>
-        <p className="text-slate-500 mt-1">Track the progress of your active campaigns</p>
+        <p className="text-slate-500 mt-1">Track the progress of your active orders</p>
       </header>
 
       {loading ? (

@@ -88,16 +88,7 @@ const Dashboard: React.FC = () => {
             <h2 className="text-xl font-bold text-slate-900">Quick Actions</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Link 
-              to="/services" 
-              className="group p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition-all text-left"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-lg font-bold text-slate-800 group-hover:text-blue-700">Browse Services</span>
-                <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-blue-600" />
-              </div>
-              <p className="text-slate-500 text-sm">Explore our catalog of high-quality SMM services for all platforms.</p>
-            </Link>
+
 
             <Link 
               to="/wallet" 
@@ -115,7 +106,7 @@ const Dashboard: React.FC = () => {
         <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 text-white relative overflow-hidden shadow-xl shadow-blue-600/30">
           <div className="relative z-10">
             <h2 className="text-2xl font-bold mb-4">Prime Support</h2>
-            <p className="text-blue-100 mb-6">Need help with your campaign? Our dedicated experts are online 24/7.</p>
+            <p className="text-blue-100 mb-6">Need help with your account? Our dedicated experts are online 24/7.</p>
             <button className="bg-white text-blue-600 px-6 py-3 rounded-xl font-bold hover:bg-blue-50 transition-all shadow-lg">
               Contact Support
             </button>

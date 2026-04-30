@@ -40,7 +40,7 @@ const Login: React.FC = () => {
         <div className="bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-8 md:p-12">
           <div className="text-center mb-10">
             <h1 className="text-3xl font-bold text-slate-950 mb-2">Welcome Back</h1>
-            <p className="text-slate-500">Sign in to manage your SMM campaigns</p>
+            <p className="text-slate-500">Sign in to manage your account</p>
           </div>
 
           {error && (
