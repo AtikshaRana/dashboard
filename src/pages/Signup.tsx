@@ -18,6 +18,7 @@ const Signup: React.FC = () => {
     setError(null);
 
     try {
+      // 1. Auth Signup
       const { data, error: signupError } = await supabase.auth.signUp({
         email,
         password,
@@ -28,17 +29,36 @@ const Signup: React.FC = () => {
         },
       });
 
-      if (signupError) throw signupError;
+      if (signupError) {
+        // Log common Supabase issues
+        if (signupError.message.includes('Database error saving new user')) {
+          console.error('Supabase Trigger Error: This usually means the "handle_new_user" trigger in your Supabase SQL setup failed. Check if the "profiles" table exists.');
+          throw new Error('Database Error: Unable to save user. Please ensure the SQL setup script has been run in your Supabase Dashboard.');
+        }
+        throw signupError;
+      }
 
-      // Note: In a real SMM app, we'd trigger a trigger in Supabase to create a profile entry
-      // or do it manually here if triggers aren't set up.
-      // Based on prompt, we assume typical Supabase behavior.
+      // 2. Manual Profile Check/Update (Fallback if trigger is missing but signup worked)
+      if (data.user && data.session) {
+         const { error: profileError } = await supabase
+          .from('profiles')
+          .upsert({ 
+            id: data.user.id, 
+            username: username,
+            balance: 0 
+          }, { onConflict: 'id' });
+          
+          if (profileError) {
+            console.warn('Manual profile creation failed. This is expected if a trigger already handled it.', profileError);
+          }
+      }
 
       if (data.user) {
         navigate('/');
       }
     } catch (err: any) {
-      setError(err.message);
+      console.error('Signup Full Error:', err);
+      setError(err.message || 'An unexpected error occurred during signup.');
     } finally {
       setLoading(false);
     }
