@@ -38,7 +38,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <aside className="hidden md:flex flex-col w-64 bg-white border-r border-slate-200">
         <div className="p-6">
           <h1 className="text-2xl font-bold text-blue-600 tracking-tight">User Dashboard</h1>
-          <p className="text-xs text-slate-400 font-mono mt-1 uppercase tracking-widest">v2.4.0</p>
         </div>
 
         <nav className="flex-1 px-4 space-y-1">
